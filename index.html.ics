@@ -4,16 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>RNR Engineering</title>
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <!-- HEADER -->
   <header>
     <div class="container">
-      <h1></h1>
+      <img src="32.jpg" class="logo" alt="RNR Engineering Logo" />
+      <h1>RNR Engineering</h1>
       <nav>
-        <a href="#about">About</a>
+        <a href="#about-us">About</a>
         <a href="#services">Services</a>
         <a href="#gallery">Gallery</a>
         <a href="#contact">Contact</a>
@@ -28,11 +29,12 @@
   </section>
 
   <!-- ABOUT -->
-  <section id="about" class="container">
+  <section id="about-us" class="container">
     <h2>About Us</h2>
     <p>
-      RNR Engineering is a Malaysian-based engineering solutions provider specializing in the design, wiring, fabrication, and installation of custom industrial systems. 
-      With a strong reputation for quality and reliability, we deliver fully tailored solutions to meet the needs of automotive, manufacturing, and factory industries.
+      We are RNR Engineering, specialists in wiring, installation, welding, jig design,
+      and fabrication for the automotive industry. With years of experience, we provide
+      high-quality, reliable, and efficient solutions to meet your manufacturing needs.
     </p>
   </section>
 
@@ -53,10 +55,22 @@
   <section id="gallery" class="container">
     <h2>Gallery</h2>
     <div class="gallery-grid">
-      <img src="images/sample1.jpg" alt="Project 1">
-      <img src="images/sample2.jpg" alt="Project 2">
-      <img src="images/sample3.jpg" alt="Project 3">
-      <img src="images/sample4.jpg" alt="Project 4">
+      <figure>
+        <img src="image/WhatsApp Image 2025-08-07 at 3.36.40 PM.jpeg" alt="Automotive" />
+        <figcaption>Automotive</figcaption>
+      </figure>
+      <figure>
+        <img src="image/WhatsApp Image 2025-08-07 at 3.54.05 PM (1).jpeg" alt="Electrical service" />
+        <figcaption>Electrical Service</figcaption>
+      </figure>
+      <figure>
+        <img src="image/WhatsApp Image 2025-08-07 at 3.54.06 PM.jpeg" alt="Structure design" />
+        <figcaption>Structure Design</figcaption>
+      </figure>
+      <figure>
+        <img src="image/WhatsApp Image 2025-08-07 at 3.17.52 PM.jpeg" alt="Example Product" />
+        <figcaption>Example Product</figcaption>
+      </figure>
     </div>
   </section>
 
@@ -69,13 +83,13 @@
 
     <iframe 
       src="https://www.google.com/maps?q=5.364920,100.578989&z=15&output=embed" 
-      width="50%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
+      allowfullscreen="" loading="lazy">
     </iframe>
 
     <form>
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea placeholder="Your Message" required></textarea>
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message" required></textarea>
       <button type="submit">Send Message</button>
     </form>
   </section>
