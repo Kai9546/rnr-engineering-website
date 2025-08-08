@@ -56,19 +56,19 @@
     <h2>Gallery</h2>
     <div class="gallery-grid">
       <figure>
-        <img src="image/WhatsApp Image 2025-08-07 at 3.36.40 PM.jpeg" alt="Automotive" />
+        <img src="image/automotive.jpeg" alt="Automotive" />
         <figcaption>Automotive</figcaption>
       </figure>
       <figure>
-        <img src="image/WhatsApp Image 2025-08-07 at 3.54.05 PM (1).jpeg" alt="Electrical service" />
+        <img src="image/electrical.jpeg" alt="Electrical service" />
         <figcaption>Electrical Service</figcaption>
       </figure>
       <figure>
-        <img src="image/WhatsApp Image 2025-08-07 at 3.54.06 PM.jpeg" alt="Structure design" />
+        <img src="image/structure.jpeg" alt="Structure design" />
         <figcaption>Structure Design</figcaption>
       </figure>
       <figure>
-        <img src="image/WhatsApp Image 2025-08-07 at 3.17.52 PM.jpeg" alt="Example Product" />
+        <img src="image/example.jpeg" alt="Example Product" />
         <figcaption>Example Product</figcaption>
       </figure>
     </div>
@@ -101,4 +101,5 @@
   </footer>
 
 </body>
+
 </html>
