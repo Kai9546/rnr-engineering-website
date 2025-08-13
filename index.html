@@ -1,108 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>RNR Engineering</title>
-  <link rel="stylesheet" href="style.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RNR Engineering</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <div class="container">
-      <img src="32.jpg" class="logo" alt="RNR Engineering Logo">
-      <h1>RNR Engineering</h1>
-      <nav>
-        <a href="#about-us">About</a>
-        <a href="#services">Services</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#contact">Contact</a>
-      </nav>
+<header>
+    <h1>RNR Engineering</h1>
+</header>
+
+<main>
+    <section class="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery-grid">
+            <img src="images/img1.jpg" alt="Gallery 1">
+            <img src="images/img2.jpg" alt="Gallery 2">
+            <img src="images/img3.jpg" alt="Gallery 3">
+            <img src="images/img4.jpg" alt="Gallery 4">
+            <img src="images/img5.jpg" alt="Gallery 5">
+        </div>
+    </section>
+</main>
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+    <div class="lightbox-caption" id="lightbox-caption"></div>
+    <div class="lightbox-nav">
+        <span class="prev">&#10094;</span>
+        <span class="next">&#10095;</span>
     </div>
-  </header>
+</div>
 
-  <!-- HERO -->
-  <section id="hero">
-    <h2>One Stop Solution</h2>
-    <p>Wiring • Installation • Welding • Jig Design • Fabrication • Structure Fabrication</p>
-  </section>
+<script>
+    const galleryImages = document.querySelectorAll('.gallery-grid img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const caption = document.getElementById('lightbox-caption');
+    const closeBtn = document.querySelector('.lightbox .close');
+    const prevBtn = document.querySelector('.lightbox .prev');
+    const nextBtn = document.querySelector('.lightbox .next');
 
-  <!-- ABOUT -->
-  <section id="about-us" class="container">
-    <h2>About Us</h2>
-    <p>
-      We are RNR Engineering, specialists in wiring, installation, welding, jig design,
-      and fabrication for the automotive industry. With years of experience, we provide
-      high-quality, reliable, and efficient solutions to meet your manufacturing needs.
-    </p>
-  </section>
+    let currentIndex = 0;
 
-  <!-- SERVICES -->
-  <section id="services" class="container">
-    <h2>Our Services</h2>
-    <div class="services-grid">
-      <div class="service">Wiring</div>
-      <div class="service">Installation</div>
-      <div class="service">Welding</div>
-      <div class="service">Jig Design</div>
-      <div class="service">Fabrication</div>
-      <div class="service">Structure Fabrication</div>
-    </div>
-  </section>
+    function showImage(index) {
+        if (index < 0) index = galleryImages.length - 1;
+        if (index >= galleryImages.length) index = 0;
+        currentIndex = index;
+        lightboxImg.src = galleryImages[index].src;
+        caption.textContent = galleryImages[index].alt;
+        lightbox.style.display = 'flex';
+    }
 
-  <!-- GALLERY -->
-  <section id="gallery" class="container">
-    <h2>Gallery</h2>
-    <div class="gallery-grid">
-      <figure>
-        <img src="automotive.jpeg" alt="Automotive">
-        <figcaption>Automotive</figcaption>
-      </figure>
-      <figure>
-        <img src="electrical.jpeg" alt="Electrical service">
-        <figcaption>Electrical Service</figcaption>
-      </figure>
-      <figure>
-        <img src="structure.jpeg" alt="Structure design">
-        <figcaption>Structure Design</figcaption>
-      </figure>
-      <figure>
-        <img src="example.jpeg" alt="Example Product">
-        <figcaption>Example Product</figcaption>
-      </figure>
-    </div>
-  </section>
+    galleryImages.forEach((img, index) => {
+        img.addEventListener('click', () => {
+            showImage(index);
+        });
+    });
 
-  <!-- CONTACT -->
-  <section id="contact" class="container">
-    <h2>Contact Us</h2>
-    <p>📞 +6012-5499860 Kai </p>
-    <p>📞 +60 17-502 2917 Roslan </p>
-    <p>📧 rnrenquiries@gmail.com</p>
-    <p>📍 Taman Kenyang, 09000 Kulim, Kedah, Malaysia</p>
+    closeBtn.addEventListener('click', () => {
+        lightbox.style.display = 'none';
+    });
 
-    <iframe 
-      src="https://www.google.com/maps?q=5.364920,100.578989&z=15&output=embed" 
-      allowfullscreen="" loading="lazy">
-    </iframe>
+    prevBtn.addEventListener('click', () => {
+        showImage(currentIndex - 1);
+    });
 
-    <form>
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
+    nextBtn.addEventListener('click', () => {
+        showImage(currentIndex + 1);
+    });
 
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2025 RNR Engineering. All rights reserved.</p>
-  </footer>
+    window.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+            lightbox.style.display = 'none';
+        }
+    });
+</script>
 
 </body>
 </html>
-
-
 
 
